@@ -1,0 +1,30 @@
+# Local environments and build output
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.build/
+.swiftpm/
+build/
+dist/
+.DS_Store
+
+# Private runtime data and credentials
+.env
+.env.*
+!.env.example
+state.json
+bridge.token
+*.log
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Editor and browser artifacts
+.idea/
+.vscode/
+.playwright-cli/

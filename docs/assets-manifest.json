@@ -1,0 +1,319 @@
+{
+  "assets": [
+    {
+      "path": "overlay/Sources/UselessPet/Resources/en.lproj/Localizable.strings",
+      "bytes": 1026,
+      "sha256": "85e30d5dd54db5d10ff89e25daab3b417cc5e0ac2a7975e7a3146dd75151ba5e"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/es.lproj/Localizable.strings",
+      "bytes": 1082,
+      "sha256": "2e8ae85c15d441263fb0e4258247b51867369093743832c27f06691134d63d7f"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/ja.lproj/Localizable.strings",
+      "bytes": 1212,
+      "sha256": "88b7f1aa2e9e5f4f53277b037785d87f0fce7cc45495cad80624eb5a8656ea26"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi.usdz",
+      "bytes": 5515488,
+      "sha256": "ecf85de770cdfaca9f79ec902a011d1b1d79b97827c0fd8673635f50e3780ae7"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_celebrate.usdz",
+      "bytes": 5527838,
+      "sha256": "a92ce9bf99f90f54d23155aa4e80d77aca006ef3f27d5913ecf8b137e75c3d5c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_eat.usdz",
+      "bytes": 5523694,
+      "sha256": "b624d59be894e4ae1b9d57aaf96a1a97ea019161b3422a68de9927c87658514c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_face_blink.png",
+      "bytes": 3238378,
+      "sha256": "fddf27c90c051505a3d754769c7cbbc3b924814bf645895d46cdb5d80502138c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_face_dizzy.png",
+      "bytes": 3222450,
+      "sha256": "450c0ae672ba53d9150acd0bef101114e7c7a0871de9096de87f756c428c497c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_face_happy.png",
+      "bytes": 3242010,
+      "sha256": "d4da518d8a4f0523bf457396e99e67c711f5ba9b01804eadb77a1b3fade1ad44"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_face_neutral.png",
+      "bytes": 3312494,
+      "sha256": "f266a8598209bb456d28e4a454b9ad3ad1630606d82db4734c0f5787756536c8"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_face_sad.png",
+      "bytes": 3223509,
+      "sha256": "4c487f41d10b9697099af04e7de0485b641ef22370816fbbcec23349dfc6d015"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_face_star.png",
+      "bytes": 3226663,
+      "sha256": "77e9ca0271031b9da23c5df3210a66216af0b3484a586261e18a0926560f0ccd"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_face_surprised.png",
+      "bytes": 3286360,
+      "sha256": "885c6ffef8de42a56f8e6709e2c93896fd2a71f59fe512866636fd64bab09989"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_idle.usdz",
+      "bytes": 5524733,
+      "sha256": "d6b61e5e0b63c9b99c33aff207a8ca27d035b6e98ae59af8424d053a04f2e043"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_play.usdz",
+      "bytes": 5526393,
+      "sha256": "4a40d6c09f3483e1dc312f48a41df60d1d5e081a5f104493c60569b5fa18b887"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_portrait.png",
+      "bytes": 108978,
+      "sha256": "878226c53daeea9af7638082840a0b87081d7226ed5fc06d7e1f9a3a6445dddf"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_sad.usdz",
+      "bytes": 5524372,
+      "sha256": "baf6be6b30d56154050364a6ea0c9ec95e629c41838d41f4099b0280b3885bb9"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_sleep.usdz",
+      "bytes": 5521622,
+      "sha256": "71ab1ce32b2b0291ba0a8609f7a3ed7a4ea9cc727d8a687583710dc05151e174"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi.usdz",
+      "bytes": 6945748,
+      "sha256": "1081e951f3d6d66e516ae5c256a1453ec0a575ae27328ec809f916fac23bea18"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_celebrate.usdz",
+      "bytes": 6959270,
+      "sha256": "c7e9d5eb71cf6ad1b6bdc4491351d398f47b263a34f4816f5cd1df1952d666b4"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_eat.usdz",
+      "bytes": 6955178,
+      "sha256": "e67029dd63e2193007ae816587dcd21b28c8635cc2b4fa344ee5220abfb3a19c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_face_blink.png",
+      "bytes": 4921308,
+      "sha256": "c1ebf316974e07392dc3f439b3f15d5ad6df97bb21873362d6fb628a3ae3bec5"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_face_dizzy.png",
+      "bytes": 4888784,
+      "sha256": "2b9a0d67a950761f6d97c29be086266e893c67d8d6a2b09536fdae443d887be7"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_face_happy.png",
+      "bytes": 4927037,
+      "sha256": "cd7ad8956f189b2755a4d30f321de21b042fd9831af960c142caa211d137d669"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_face_neutral.png",
+      "bytes": 4958780,
+      "sha256": "9b144b6850e5104f1f09169f72ab9f0bb4a086a1c81027e5848f5256b40e3a25"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_face_sad.png",
+      "bytes": 4891072,
+      "sha256": "2639f00f9e1603afac78b71fb3471df93dfec734dd098777b14110d0a090b8e8"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_face_star.png",
+      "bytes": 4912303,
+      "sha256": "83296bdde58294d39fe59b497d5fbb6c8a75750f25c88e7785f08f27df858630"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_face_surprised.png",
+      "bytes": 4922561,
+      "sha256": "136b0bb272fbb28aec0a512221cfcd5b6c55501fac12fd6a701d66822aebeaa6"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_idle.usdz",
+      "bytes": 6955731,
+      "sha256": "53da8e9ca6ca748fbd6afa6b31d7a785b56a97c4a73d485e0885d83218c2efed"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_play.usdz",
+      "bytes": 6957513,
+      "sha256": "28bec231db2c152f455bebceaa76813f94afb76292964149d46815624ee091a8"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_portrait.png",
+      "bytes": 136043,
+      "sha256": "9d6d5fccc5b7a0de7dea32fb5e47b81ae3c14f17d1364d62f3e5ba1174076c9b"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_sad.usdz",
+      "bytes": 6955387,
+      "sha256": "a5cffcfbbe1fe6a31436dbcc2d82ffa3714b3831a84264b27d2026480ba31af0"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_sleep.usdz",
+      "bytes": 6952349,
+      "sha256": "0efda77c781190790d9f9b9e69e731c34bc4eef0939e982cce9bad73b4398474"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_face_blink.png",
+      "bytes": 4396658,
+      "sha256": "4aae39313c548bc94de84f8e5a81c9b64aa2e162522e729fbbb25ce4a930027d"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_face_happy.png",
+      "bytes": 4397486,
+      "sha256": "9aa059999040c6b7adf3cf7bbbd911944ae7bac9a0318e3745c1aebe684d17b0"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_face_neutral.png",
+      "bytes": 4494606,
+      "sha256": "f84b9dedb24bd6430d9753b034cca04e88585a794c98f05226182680fe65c343"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_face_sad.png",
+      "bytes": 4397378,
+      "sha256": "0b010c4c873c932fcb73edd0e4a54539f212634286c4d7e255f00c7926267828"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_face_surprised.png",
+      "bytes": 4498901,
+      "sha256": "e299cfbfc045d2222e78c97fc5203c7756273a669b2b01279d0a1ae1c85a7160"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_hybrid_celebrate.usdz",
+      "bytes": 18662092,
+      "sha256": "a97d314472f19de2c2b28be8e73a2e748b23c848d064032a4ecb232e0ba1073b"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_hybrid_demo.usdz",
+      "bytes": 18641812,
+      "sha256": "53d2400b89da3978e6f15758a6162747728e51c1e0d2f4f00a622de0c4b2d623"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_hybrid_eat.usdz",
+      "bytes": 18662895,
+      "sha256": "0dad9661e3b529d0a56e41daffbd3a662abf4f7c80f3ff22b0d10c07e078914b"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_hybrid_idle.usdz",
+      "bytes": 18658082,
+      "sha256": "fba1157474e1f9172578b8e2089cc99da42bb3708defbd4e8b241c3cb653d437"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_hybrid_play.usdz",
+      "bytes": 18657335,
+      "sha256": "1cc15ab5de7eeef69b5608a2b00d3a5fae4baa43aabc26f46175cc7ac97557ee"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_hybrid_sad.usdz",
+      "bytes": 18657933,
+      "sha256": "e8493f9ed04d4cee23df6b51395a7ea2941ee5fd762a46ed00087ce141cfe096"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_hybrid_sleep.usdz",
+      "bytes": 18666869,
+      "sha256": "3cf918b0ebf2dbb37974a0a0cf14f7ce7d05bf6130391de5b5bdfb17423360ae"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/nara_portrait.png",
+      "bytes": 166953,
+      "sha256": "fb02a31efd4bf24759fed04d06c3196461d79c3e3e0eab4160eb9f459e748607"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando.usdz",
+      "bytes": 5765351,
+      "sha256": "3cda42d58f76f0d2d28589d8da26ed1136f83d38bdefb817a44b8e818db17354"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_celebrate.usdz",
+      "bytes": 5777689,
+      "sha256": "9289913d1f11e172ceb9871f552b9fb45fcc38296c4b2a516d5e57a6f3c93cd7"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_eat.usdz",
+      "bytes": 5773826,
+      "sha256": "8c8e5fdfe5e0b41ebff4eaf884d18f6d3a86803e7875706141196ce7abe0c51f"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_face_blink.png",
+      "bytes": 3206904,
+      "sha256": "f998135d30f066d37cea7c4e0fc4bc4dc7e803a7c036dfbee35e0f1ec4d0203d"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_face_dizzy.png",
+      "bytes": 3251928,
+      "sha256": "786996e3797e338272bad1e7e3d33927c353c8266783779812aaf881227b510c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_face_happy.png",
+      "bytes": 3214927,
+      "sha256": "fff016926f13cc6b052200cfdbc95487156c4db4f30f9ce2a5a577dbe1897a4f"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_face_neutral.png",
+      "bytes": 3267326,
+      "sha256": "12c22d68a87d0fdcd832422e2aa6e53faa68573d85ce25ca6b1df7f5642a6d0c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_face_sad.png",
+      "bytes": 3194537,
+      "sha256": "088984f6f8a50da4a018747fbfbabe27cc7642da52372216ede84150dd8f6fa9"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_face_star.png",
+      "bytes": 3262682,
+      "sha256": "742f1e668ab1d61f2f4f8adf88158e96ded96d0946f4f2433119d2c69f35d53b"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_face_surprised.png",
+      "bytes": 3243680,
+      "sha256": "abd83824df6f7c2a16f2f45144e77f86bb328e7ed2efc4c297e8817445bfaf2e"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_idle.usdz",
+      "bytes": 5774454,
+      "sha256": "5ad7b4d416a39ebc564401cd091ec003e7d5ae417ec7383be7fdf44ccc9d7813"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_play.usdz",
+      "bytes": 5775984,
+      "sha256": "c8b19241505ddca734dc99004f8b69c14b095b8afe94e5d0c5ab87ceb74c669e"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_portrait.png",
+      "bytes": 121742,
+      "sha256": "46eeb0587004b193ff59ef087b1e482023405b14364a4bf83c7c837f518c9da6"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_sad.usdz",
+      "bytes": 5774222,
+      "sha256": "0c76adb84e8e0d5c3aa2340e0df19c9e78cfadda6ac74d22a19d1db06a8641b1"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_sleep.usdz",
+      "bytes": 5771471,
+      "sha256": "833a809f103b1078a8129da4d675255eb5db117647f7be6a22ff14dace3b571c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/zh-Hans.lproj/Localizable.strings",
+      "bytes": 1053,
+      "sha256": "9529376b65eea02cf87d9001020b823561872d84603a8068369808fabd16044e"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/zh-Hant.lproj/Localizable.strings",
+      "bytes": 1059,
+      "sha256": "02bb11ef325389fbec76907fbfaf6b75fac1fb00002e7544d5395fb1e4320151"
+    }
+  ]
+}
