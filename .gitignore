@@ -28,3 +28,6 @@ bridge.token
 .idea/
 .vscode/
 .playwright-cli/
+
+# Local development-agent guidance
+/AGENTS.md

@@ -1,7 +1,6 @@
 import asyncio
 import json
 import random
-import socket
 import stat
 import subprocess
 import sys
@@ -16,14 +15,6 @@ from uselesspet.launcher import environment, stop
 from uselesspet.persistence import instance_lock
 from websockets.asyncio.client import connect
 from websockets.exceptions import ConnectionClosed, InvalidStatus
-
-
-@pytest.fixture
-def settings(tmp_path):
-    with socket.socket() as sock:
-        sock.bind(("127.0.0.1", 0))
-        port = sock.getsockname()[1]
-    return Settings(tmp_path / "state", port=port)
 
 
 def test_reactions_are_varied_and_selection_survives_restart(settings):

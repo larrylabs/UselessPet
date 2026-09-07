@@ -1,4 +1,5 @@
 import AppKit
+import ApplicationServices
 import RealityKit
 
 /// Uses the production renderer with local inputs, never a daemon or saved pet.
@@ -6,6 +7,11 @@ import RealityKit
 enum CompanionRuntimeQA {
     static func run(directory: String) {
         setbuf(stdout, nil)
+        let session = CGSessionCopyCurrentDictionary() as? [String: Any] ?? [:]
+        guard session["CGSSessionScreenIsLocked"] as? Bool != true else {
+            print("Native render QA requires an unlocked Mac; no acceptance screenshots were captured.")
+            exit(3)
+        }
         let app = NSApplication.shared
         app.setActivationPolicy(.regular)
         let runner = Runner(output: URL(fileURLWithPath: directory))
