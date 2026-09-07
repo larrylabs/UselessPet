@@ -66,6 +66,41 @@
       "sha256": "885c6ffef8de42a56f8e6709e2c93896fd2a71f59fe512866636fd64bab09989"
     },
     {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_hybrid_celebrate.usdz",
+      "bytes": 14598319,
+      "sha256": "25547fdf3fb1868586551868fd8c325320768a60e4b816936452d5d020263c8c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_hybrid_demo.usdz",
+      "bytes": 14576545,
+      "sha256": "f8144c0406538b8a61cafad94b39447053175c1d1a1ccb543b4a45eee54ca9a8"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_hybrid_eat.usdz",
+      "bytes": 14597946,
+      "sha256": "133b65bdc782faf846b6badd586e0b2a29426ce377e365fd3b5f9b749738f3df"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_hybrid_idle.usdz",
+      "bytes": 14595858,
+      "sha256": "6fcd18d163965205c902f597003994adbdbdd84e53deb0b441a66197e54a3e79"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_hybrid_play.usdz",
+      "bytes": 14597506,
+      "sha256": "bf661496644d78ffb60eb77ab7d7e26b1e247e2a5b1a78ce38806a1337584f59"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_hybrid_sad.usdz",
+      "bytes": 14600470,
+      "sha256": "9ef2609e354d7ce77be819feaeb6c05d29b631bff2dcc49ed87f89b4d068e90a"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/lumi_hybrid_sleep.usdz",
+      "bytes": 14605330,
+      "sha256": "cb3936e04aed62f978449c7dd2802f67dab10eff14886c5862175b0d151ccd78"
+    },
+    {
       "path": "overlay/Sources/UselessPet/Resources/lumi_idle.usdz",
       "bytes": 5524733,
       "sha256": "d6b61e5e0b63c9b99c33aff207a8ca27d035b6e98ae59af8424d053a04f2e043"
@@ -139,6 +174,41 @@
       "path": "overlay/Sources/UselessPet/Resources/mochi_face_surprised.png",
       "bytes": 4922561,
       "sha256": "136b0bb272fbb28aec0a512221cfcd5b6c55501fac12fd6a701d66822aebeaa6"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_hybrid_celebrate.usdz",
+      "bytes": 15876741,
+      "sha256": "1ed71d7682bb5aac179a4c76820ed8b983ef5381f374dd954c3244713fecc070"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_hybrid_demo.usdz",
+      "bytes": 15854957,
+      "sha256": "5cc839c2565a3c225fef2f53d2ae3709a851f75bede915cf5e954f3c456acaec"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_hybrid_eat.usdz",
+      "bytes": 15876368,
+      "sha256": "5cb921677b4e977943090031441bc84da88c2ac8a82f7ee198be05bc8ea22fc5"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_hybrid_idle.usdz",
+      "bytes": 15874282,
+      "sha256": "1fe7016edf5f2a9235c05033642349b6b891accba36046f468467602994143e1"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_hybrid_play.usdz",
+      "bytes": 15875928,
+      "sha256": "430699873af425e857154be0aa1c2c43284836d27a6ff816a2ef23deb9f7b59a"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_hybrid_sad.usdz",
+      "bytes": 15878892,
+      "sha256": "75a1815c4331693d7e14a40fb23381c107223a039ab8f47e441722e8c255a846"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/mochi_hybrid_sleep.usdz",
+      "bytes": 15883752,
+      "sha256": "7fcbaf6d2be997541eb964db3f1b7bb68e484cc3058a0b6f33349797279b6315"
     },
     {
       "path": "overlay/Sources/UselessPet/Resources/mochi_idle.usdz",
@@ -279,6 +349,41 @@
       "path": "overlay/Sources/UselessPet/Resources/pando_face_surprised.png",
       "bytes": 3243680,
       "sha256": "abd83824df6f7c2a16f2f45144e77f86bb328e7ed2efc4c297e8817445bfaf2e"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_hybrid_celebrate.usdz",
+      "bytes": 25976015,
+      "sha256": "0a5332f2434ad4abde30490d65bf490e49a33122530b8a68c3039f90070ec8e3"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_hybrid_demo.usdz",
+      "bytes": 25954240,
+      "sha256": "6386502a70a00a711616970e31f6e29dba191bd15aeb5326d4706c1eb4fa6485"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_hybrid_eat.usdz",
+      "bytes": 25975642,
+      "sha256": "a9d6a63a1597be14894f7092ef782babe798e2e447268761661f0bfa7c2b7f12"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_hybrid_idle.usdz",
+      "bytes": 25973684,
+      "sha256": "033f5cf09690b39efa2ce2c369b951c76c938b66c7e981ab53029c108ee8f45c"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_hybrid_play.usdz",
+      "bytes": 25975203,
+      "sha256": "dc87dbcc2c691d68a5e3374b63c51e7cd6d25237fac11434de45ff97f69e340f"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_hybrid_sad.usdz",
+      "bytes": 25978295,
+      "sha256": "0c29b37bdff8e998c5f64c044b59f43235ece1befdd282ce636e0c24fcf1b5d4"
+    },
+    {
+      "path": "overlay/Sources/UselessPet/Resources/pando_hybrid_sleep.usdz",
+      "bytes": 25983153,
+      "sha256": "6f0ee1f6bf2cd610d30fa16cad0fc5318e3ad3b6fd762c552e968ad0b8a6a7cb"
     },
     {
       "path": "overlay/Sources/UselessPet/Resources/pando_idle.usdz",

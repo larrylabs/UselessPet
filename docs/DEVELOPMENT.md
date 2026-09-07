@@ -22,9 +22,11 @@ make lint             # Python static and format checks
 make verify-assets    # resource inventory and SHA-256 verification
 make qa-console       # light/dark panels in all five languages
 make qa-render        # all four characters and reaction samples
+make qa-mochi-face    # Mochi source comparison and continuous facial controls
+make qa-hybrid-face PET=pando # use pando, lumi, or mochi; includes 200pt captures
 ```
 
-Keep `DEVELOPER_DIR` set to full Xcode as shown in the README. Native QA requires a logged-in graphical macOS session and writes only to `build/qa/`. Unit tests can run in CI. QA pictures are not a substitute for checking the running desktop app.
+Keep `DEVELOPER_DIR` set to full Xcode as shown in the README. Native QA requires a logged-in graphical macOS session and writes only to `build/qa/`. Unit tests can run in CI. QA pictures are not a substitute for checking the running desktop app. Unlock the Mac before native capture commands; locked sessions can suspend window rendering.
 
 Use `make format` for Python formatting. Dependencies are managed with uv; after intentionally changing them, run `uv lock` and `make setup`, then commit both the project file and lockfile. Do not use pip.
 
@@ -65,4 +67,25 @@ The four IDs are `nara`, `mochi`, `pando`, and `lumi`. Successful commands send 
 
 ## Release scope
 
-The repository is a standalone source distribution. There is no bundled Python runtime, automatic updater, launch-at-login helper, installer, signing setup, or notarized app. Build outputs and local data are ignored by Git. Automated checks cover Python on Linux and native compilation/tests on macOS; real rendering is checked locally.
+The public release is a source distribution. The local Dev workflow below creates an app with a bundled runtime and an ad-hoc signature. There is no public DMG, automatic updater, launch-at-login helper, or notarized release. Build outputs and local data are ignored by Git. Automated checks cover Python on Linux and native compilation/tests on macOS; real rendering is checked locally.
+
+## Installed local Dev app
+
+`make install-dev` builds the current working tree, verifies character assets, packages the
+native view, a copied uv CPython runtime, backend and locked WebSocket dependency, and installs
+`/Applications/UselessPet Dev.app`. It opens the app after a verified replacement. You can
+also open it from Finder or Spotlight; no terminal or running source checkout is required.
+The copied runtime retains its Python license, and the dependency metadata includes its license.
+
+After finishing and validating a change, run `make install-dev` again to refresh the installed
+preview. This includes uncommitted changes. It does not monitor files or rebuild automatically.
+The settings panel shows the build time and source revision so you can identify what is running.
+`make verify-dev` checks the installed files and local code signature; `make package-dev` builds
+without installing. Set `APPLICATIONS_DIR="$HOME/Applications"` for a per-user installation.
+
+The Dev identity is `io.github.LarryZYN.UselessPet.Dev`. Its private state is in
+`~/Library/Application Support/UselessPet Dev/`, and its loopback port is `17576`.
+The native app starts and stops its own daemon; the daemon also exits if its parent crashes.
+Service diagnostics go to `~/Library/Logs/UselessPet Dev/service.log`.
+The Dev bundle is locally ad-hoc signed, not a notarized public release. Installation does not
+enable launch at login, modify the source-run state, or publish a GitHub release.

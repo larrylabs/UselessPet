@@ -463,7 +463,7 @@ final class Pet3DController {
     private var animationCarrier = Entity()
     private var snapshotPlayback: AnimationPlaybackController?
     private var skeletalPlayback: AnimationPlaybackController?
-    private var naraAsset: NaraHybridAsset?
+    private var hybridAsset: HybridPetAsset?
     private var naraTimeline: NaraPresentationTimeline?
     private var naraFaceAnimator = NaraFaceAnimator()
     private var naraPresentation: NaraPresentation?
@@ -627,7 +627,18 @@ final class Pet3DController {
         }
     }
 
-    var snapshotHasBoundFace: Bool { naraAsset != nil || (usesBakedFace && faceCarrier != nil) }
+    func setFaceForQA(_ pose: NaraFacePose) {
+        idleSub?.cancel()
+        creature.stopAllAnimations(recursive: true)
+        snapshotPlayback?.stop()
+        skeletalPlayback?.stop()
+        hybridAsset?.faceRig.apply(pose)
+        naraRenderedFace = pose
+    }
+    var qaUseBaselineAsset = false
+    var snapshotHasHybridFace: Bool { hybridAsset != nil }
+
+    var snapshotHasBoundFace: Bool { hybridAsset != nil || (usesBakedFace && faceCarrier != nil) }
     var snapshotHasAllClips: Bool { Set(clipLibrary.keys) == Set(Self.clipDurations.keys) }
     func pauseSnapshotAnimation() {
         if let playback = snapshotPlayback {
@@ -723,7 +734,7 @@ final class Pet3DController {
             NSLog("UselessPet expression: %@", e.rawValue)
         }
         currentExpression = e
-        if naraAsset == nil { applyFaceTexture(e) }
+        if hybridAsset == nil { applyFaceTexture(e) }
     }
 
     /// Species whose expressions are baked whole-texture variants (no decal).
@@ -735,7 +746,7 @@ final class Pet3DController {
     /// UnlitMaterial: decals so they never pick up shading seams, baked
     /// textures because Rodin's "shaded" maps already contain their lighting.
     private func applyFaceTexture(_ e: PetExpression) {
-        if let asset = naraAsset {
+        if let asset = hybridAsset {
             // Used by the paused face QA. The live path eases the same target
             // through NaraFaceAnimator on each RealityKit update.
             asset.faceRig.apply(.expression(e))
@@ -778,7 +789,7 @@ final class Pet3DController {
         skeletalPlayback?.stop()
         skeletalPlayback = nil
         creature.stopAllAnimations(recursive: true)
-        naraAsset = nil
+        hybridAsset = nil
         naraTimeline = nil
         naraPresentation = nil
         naraFaceAnimator = NaraFaceAnimator()
@@ -789,8 +800,8 @@ final class Pet3DController {
         currentSpeciesId = species.id
         creature.removeFromParent()
 
-        let loaded = Self.loadBundledModel(species)
-        naraAsset = loaded?.nara
+        let loaded = Self.loadBundledModel(species, allowHybrid: !qaUseBaselineAsset)
+        hybridAsset = loaded?.hybrid
         clipLibrary = loaded?.clips ?? [:]
         currentAmbientClip = nil
         let built = loaded?.entity
@@ -798,11 +809,11 @@ final class Pet3DController {
         creature = built
         // Direct skeletal clips bind to the mesh-bearing Rig, not a display
         // wrapper or an imported scene timeline. Other pets retain their route.
-        animationCarrier = species.id == "nara" ? (loaded?.animationEntity ?? built) : built
+        animationCarrier = hybridAsset != nil ? (loaded?.animationEntity ?? built) : built
         creature.transform = .identity
         pivot.addChild(creature)
         headLook = PetHeadLook(root: creature)
-        if naraAsset != nil {
+        if hybridAsset != nil {
             naraTimeline = NaraPresentationTimeline(activity: currentActivity, mood: currentMood,
                 hunger: currentHunger, durations: clipLibrary.mapValues { $0.definition.duration })
             currentExpression = naraTimeline!.presentation.expression
@@ -817,7 +828,7 @@ final class Pet3DController {
         // all — their "face slot" is the body's whole material.
         // Choose the route from what actually loaded. A procedural fallback
         // needs a transparent decal, never a whole-body UV atlas.
-        usesBakedFace = loaded != nil && naraAsset == nil && Self.bakedFaceSpecies.contains(species.id)
+        usesBakedFace = loaded != nil && hybridAsset == nil && Self.bakedFaceSpecies.contains(species.id)
         let faceSlot = usesBakedFace
             ? Self.bodyFaceSlot(in: creature, species: species.id)
             : Self.findFaceSlot(in: creature)
@@ -904,21 +915,21 @@ final class Pet3DController {
         let entity: Entity
         let animationEntity: Entity
         let clips: [String: AnimationResource]
-        var nara: NaraHybridAsset? = nil
+        var hybrid: HybridPetAsset? = nil
     }
 
-    private static func loadBundledModel(_ species: SpeciesInfo) -> LoadedPetModel? {
-        if species.id == "nara" {
+    private static func loadBundledModel(_ species: SpeciesInfo, allowHybrid: Bool = true) -> LoadedPetModel? {
+        if allowHybrid && ["nara", "mochi", "pando", "lumi"].contains(species.id) {
             do {
-                let asset = try NaraHybridAsset.load()
+                let asset = try HybridPetAsset.load(species: species.id)
                 let container = Entity()
                 container.addChild(asset.entity)
                 return .init(entity: container, animationEntity: asset.faceRig.animationCarrier,
-                             clips: asset.clips, nara: asset)
+                             clips: asset.clips, hybrid: asset)
             } catch {
                 // Keep the established bundled fallback if an installation is
                 // incomplete. The isolated acceptance run rejects this route.
-                NSLog("UselessPet Nara hybrid unavailable: %@", error.localizedDescription)
+                NSLog("UselessPet %@ hybrid unavailable: %@", species.id, error.localizedDescription)
             }
         }
         guard let name = species.model3DName else { return nil }
@@ -1166,7 +1177,7 @@ final class Pet3DController {
         // Ease the rendered scale toward the mood target so mood shifts glide.
         renderedScale += (moodScale - renderedScale) * Float(1 - exp(-delta * 3.71))
         updateLook(delta: delta)
-        if let asset = naraAsset {
+        if let asset = hybridAsset {
             naraRenderedFace = naraFaceAnimator.advance(by: delta, expression: currentExpression,
                 gazeX: lookYaw / (.pi / 12), gazeY: -lookPitch / (.pi * 8 / 180),
                 reactionClip: naraPresentation?.phase == "reaction" ? naraPresentation?.clip : nil,
@@ -1178,7 +1189,7 @@ final class Pet3DController {
             updateBlink()
         }
 
-        let sleeping = naraAsset != nil && currentExpression == .sleepy
+        let sleeping = hybridAsset != nil && currentExpression == .sleepy
         let bob = sin(bobPhase) * bobAmp * (sleeping ? 0.2 : 1)
 
         var tf = Transform()
@@ -1191,10 +1202,14 @@ final class Pet3DController {
         tf.scale = SIMD3(repeating: renderedScale * userScale)
         if let frame = reactionFrame {
             tf.rotation = simd_quatf(angle: frame.tilt, axis: [0, 0, 1])
-            tf.scale *= frame.scale
+            // Mochi's ears sit farther forward in perspective. Keep the
+            // procedural bounce subtle alongside its authored skeletal hops.
+            let motionStrength: Float = currentSpeciesId == "mochi" ? 0.4 : 1
+            let reactionScale = SIMD3<Float>(repeating: 1) + (frame.scale - SIMD3<Float>(repeating: 1)) * motionStrength
+            tf.scale *= reactionScale
             let foot = SIMD3<Float>(0, -0.115 * renderedScale * userScale, 0)
-            tf.translation += foot - tf.rotation.act(foot * frame.scale)
-            tf.translation.y += frame.hop * userScale
+            tf.translation += foot - tf.rotation.act(foot * reactionScale)
+            tf.translation.y += frame.hop * userScale * motionStrength
         }
         pivot.transform = tf
     }
@@ -1302,7 +1317,7 @@ final class Pet3DController {
                               creature.visualBounds(relativeTo: nil).extents.z],
             "head_tracking": headLook?.diagnostics ?? [:],
             "pivot_rotation": [pivot.orientation.vector.x, pivot.orientation.vector.y, pivot.orientation.vector.z, pivot.orientation.vector.w],
-            "species": currentSpeciesId ?? "", "hybrid": naraAsset != nil,
+            "species": currentSpeciesId ?? "", "hybrid": hybridAsset != nil,
             "clip": companionReaction?.clip ?? naraPresentation?.clip ?? currentAmbientClip ?? "",
             "expression": currentExpression.rawValue,
             "phase": companionReaction != nil ? "reaction" : naraPresentation?.phase ?? "legacy",
@@ -1315,10 +1330,10 @@ final class Pet3DController {
             "is_playing": skeletalPlayback?.isPlaying ?? false,
             "active_playback_count": skeletalPlayback?.isPlaying == true ? 1 : 0,
             "playback_starts": playbackStarts, "rebuild_count": rebuildCount,
-            "entity_count": count, "source_load_count": NaraHybridAsset.sourceLoadCount,
-            "weights": naraRenderedFace.weights, "imported_weights": naraAsset?.faceRig.importedWeights() ?? [:],
-            "asset_sha256": naraAsset?.assetSHA256 ?? "",
-            "clip_asset_sha256": naraAsset?.clipSHA256 ?? [:],
+            "entity_count": count, "source_load_count": HybridPetAsset.sourceLoadCount,
+            "weights": naraRenderedFace.weights, "imported_weights": hybridAsset?.faceRig.importedWeights() ?? [:],
+            "asset_sha256": hybridAsset?.assetSHA256 ?? "",
+            "clip_asset_sha256": hybridAsset?.clipSHA256 ?? [:],
             "clip_durations": clipLibrary.mapValues { $0.definition.duration },
             "user_scale": userScale, "transparent": true,
             "render_frame_count": renderedFrames, "render_seconds": renderedSeconds,

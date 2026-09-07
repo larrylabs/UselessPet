@@ -10,6 +10,7 @@ help:
 	@echo "UselessPet — Completely useless. Surprisingly good company."
 	@echo "make setup        Install the locked Python environment using uv"
 	@echo "make run          Build and run your desktop companion"
+	@echo "make install-dev  Update and open /Applications/UselessPet Dev.app"
 	@echo "make test         Run backend and local protocol tests"
 	@echo "make test-overlay Run native view and renderer unit tests"
 	@echo "make lint         Check Python code without changing files"
@@ -65,3 +66,29 @@ verify-assets:
 .PHONY: update-asset-manifest
 update-asset-manifest:
 	$(PYTHON) scripts/verify_assets.py --update
+
+.PHONY: qa-mochi-face
+qa-mochi-face: build
+	USELESSPET_QA_MOCHI_FACE="$(QA_DIR)/mochi-face" "$$($(SWIFT) build -c $(CONFIGURATION) --package-path overlay --show-bin-path)/UselessPet"
+
+.PHONY: qa-hybrid-face
+qa-hybrid-face: build
+	USELESSPET_QA_HYBRID_FACE="$(QA_DIR)/$(PET)-face" USELESSPET_QA_SPECIES="$(PET)" "$$($(SWIFT) build -c $(CONFIGURATION) --package-path overlay --show-bin-path)/UselessPet"
+
+.PHONY: qa-roster-refinement
+qa-roster-refinement:
+	$(MAKE) qa-hybrid-face PET=pando
+	$(MAKE) qa-hybrid-face PET=lumi
+	$(MAKE) qa-render
+
+.PHONY: package-dev install-dev verify-dev
+APPLICATIONS_DIR ?= /Applications
+package-dev: build verify-assets
+	$(PYTHON) scripts/dev_app.py package --binary-dir "$$($(SWIFT) build -c $(CONFIGURATION) --package-path overlay --show-bin-path)"
+	$(SWIFT)c scripts/dev_control.swift -o build/dev-app/dev-control
+
+install-dev: package-dev
+	$(PYTHON) scripts/dev_app.py install --applications-dir "$(APPLICATIONS_DIR)"
+
+verify-dev:
+	$(PYTHON) scripts/dev_app.py verify --app "$(APPLICATIONS_DIR)/UselessPet Dev.app"

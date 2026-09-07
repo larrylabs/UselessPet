@@ -49,9 +49,9 @@ These are native app screenshots and renders of the included characters.
 
 ## Run from source
 
-This first release is for people comfortable opening Terminal. There is no installer or DMG.
+This first release builds from source. For an app you can open from Finder or Spotlight, run `make install-dev` after setup; it installs **UselessPet Dev** in Applications. There is no public DMG.
 
-**You need:** macOS 15 or later, full **Xcode 16 or later** (open it once to finish setup), and **[uv](https://docs.astral.sh/uv/getting-started/installation/)**. The Apple Silicon build is tested; Intel Macs are not yet verified. The repository includes about 345 MiB of character assets.
+**You need:** macOS 15 or later, full **Xcode 16 or later** (open it once to finish setup), and **[uv](https://docs.astral.sh/uv/getting-started/installation/)**. The Apple Silicon build is tested; Intel Macs are not yet verified. The repository includes about 721 MiB of character assets.
 
 If you use Homebrew, install uv with `brew install uv`. Then:
 
@@ -62,6 +62,8 @@ export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 make setup
 make run
 ```
+
+For later development updates, run `make install-dev` again after validating your changes. The installed Dev app shows its build time in Settings and uses separate local state. See [the Dev app workflow](docs/DEVELOPMENT.md#installed-local-dev-app).
 
 `make setup` installs the locked Python environment. uv can download a compatible Python if needed. The first native build takes longer; later launches reuse it. If Xcode is installed elsewhere, adjust `DEVELOPER_DIR` to match.
 

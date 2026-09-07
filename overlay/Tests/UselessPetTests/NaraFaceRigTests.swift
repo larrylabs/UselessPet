@@ -1,7 +1,7 @@
 import XCTest
 @testable import UselessPet
 
-final class NaraFaceRigTests: XCTestCase {
+final class CompanionFaceRigTests: XCTestCase {
     func testSmileAndGazeSurviveAnOverlaidBlink() {
         let original = NaraFacePose(blinkLeft: 0.1, gazeX: -0.4, gazeY: 0.2, smile: 0.7)
         let blink = original.addingBlink(0.75).weights
