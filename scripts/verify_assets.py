@@ -34,7 +34,7 @@ def main():
     actual = inventory()
     names = {Path(item["path"]).name for item in actual}
     for species in ("nara", "mochi", "pando", "lumi"):
-        prefix = "nara_hybrid" if species == "nara" else species
+        prefix = f"{species}_hybrid"
         for clip in ("idle", "eat", "play", "celebrate", "sad", "sleep"):
             assert f"{prefix}_{clip}.usdz" in names, (species, clip)
         assert f"{species}_portrait.png" in names, species

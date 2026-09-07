@@ -53,7 +53,7 @@ enum L10nKey: String, CaseIterable {
 }
 
 enum L10n {
-    static let appName = "UselessPet"
+    static var appName: String { DevAppRuntime.isDev ? "UselessPet Dev" : "UselessPet" }
     static func text(_ key: L10nKey, language: AppLanguage = .current, name: String = "") -> String {
         let fallback = resourceBundle(for: .english)?.localizedString(forKey: key.rawValue, value: key.rawValue, table: nil) ?? key.rawValue
         return (resourceBundle(for: language)?.localizedString(forKey: key.rawValue, value: fallback, table: nil) ?? fallback)

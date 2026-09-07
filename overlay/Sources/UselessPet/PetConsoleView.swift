@@ -143,6 +143,11 @@ struct PetConsoleView: View {
             }
             Toggle(t(.headTracking), isOn: $followsCursor).accessibilityIdentifier("companion-head-tracking")
             Divider()
+            if let build = DevAppRuntime.buildLabel {
+                Text("UselessPet Dev · \(build)")
+                    .font(.system(size: 10)).foregroundStyle(.secondary)
+                    .textSelection(.enabled).accessibilityIdentifier("dev-build-info")
+            }
             Button(t(.quit)) { NSApplication.shared.terminate(nil) }
                 .buttonStyle(.plain).foregroundStyle(.secondary).accessibilityIdentifier("companion-quit")
         }

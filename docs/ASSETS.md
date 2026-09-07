@@ -4,7 +4,7 @@ The public roster is Nara, Mochi, Pando, and Lumi. The character artwork was sup
 
 This repository includes the runtime USDZ files, PNG textures, and portraits needed to run UselessPet. It does not include the original modeling projects or a complete reproducible art-generation pipeline. Screenshots in the README show these actual runtime characters.
 
-Nara uses a hybrid rig and procedural face controls. Mochi, Pando, and Lumi use the bundled skeletal clips and baked face textures. Keep neutral faces and identity consistent when editing animations.
+All four companions use hybrid rigs with continuous eyelid, gaze, and smile controls. Mochi has softly weighted ears and a curled tail; Pando has restrained ear motion, and Lumi has gently swaying long ears. Their original bundled resources remain as neutral comparison baselines and fallbacks. Pando's refined geometry is derived from the distributed neutral USDZ because its original Rodin GLB is unavailable in the current art workspace. Keep neutral faces and identity consistent when editing animations.
 
 Artwork is covered by [ASSET_LICENSE.md](../ASSET_LICENSE.md). Source code and localization text use [MIT](../LICENSE). `assets-manifest.json` records each distributed native resource and its SHA-256 checksum. After intentionally replacing a resource, run `make update-asset-manifest`, inspect the changed inventory, and then `make verify-assets`.
 
